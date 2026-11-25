@@ -1,0 +1,14 @@
+{
+  "name": "pi-ingles-ex-machina",
+  "version": "1.0.0",
+  "description": "Multiplatform Turing Evaluation Protocol inspired by Ex-Machina",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Helder & Maciel",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^3.6.1"
+  }
+}
