@@ -62,7 +62,7 @@ PI-ingles-ex-machina/
 ## Team
 
 * **Helder Virissio** – Development & Architecture
-* **Maciel** – Development & Presentation
+* **Maciel Dos Santos** – Development & Presentation
 
 ---
 *Developed for academic presentation – November 2026.*
