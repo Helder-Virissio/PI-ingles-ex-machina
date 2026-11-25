@@ -1,63 +1,103 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blue Book | Turing Evaluation Protocol (Ex-Machina)</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUEBOOK LABS // Turing & Behavioral Evaluation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
-    <header class="header">
-      <div class="logo">BLUE BOOK RESEARCH</div>
-      <div class="protocol-badge">Subject: AVA-01 (Ex-Machina Protocol)</div>
+    <header class="topbar">
+        <div class="brand">
+            <span class="pulse-dot"></span>
+            <h1>BLUEBOOK LABS <span>// SUBJECT: AVA-01</span></h1>
+        </div>
+        <div class="controls">
+            <span id="engine-badge" class="badge online">ENGINE: HYBRID AUTO</span>
+            <label class="toggle-label">
+                <input type="checkbox" id="force-offline">
+                Force Offline Mode
+            </label>
+            <!-- Nova seção para configurar a API Key do Google -->
+            <div class="api-key-group">
+                <input type="password" id="api-key-input" placeholder="Google API Key..." autocomplete="off">
+                <button id="save-key-btn" class="btn-secondary">Save Key</button>
+            </div>
+            <button id="reset-btn" class="btn-secondary">Reset Session</button>
+        </div>
     </header>
-    <div class="grid-layout">
-      <section class="chat-section">
-        <div class="chat-header">
-          <h2>Behavioral Interrogation Terminal</h2>
-          <span class="status-indicator">● Session Active</span>
-        </div>
-        <div id="chat-box" class="chat-box">
-          <div class="message ai-msg">
-            <span class="sender">AVA-01:</span>
-            <p>System initialized. Evaluation session started. You may begin your questions, Evaluator.</p>
-          </div>
-        </div>
-        <form id="chat-form" class="chat-form">
-          <input type="text" id="user-input" placeholder="Type your question in English..." required autocomplete="off">
-          <button type="submit">Transmit</button>
-        </form>
-      </section>
-      <aside class="telemetry-sidebar">
-        <div class="card">
-          <h3>Behavioral Telemetry</h3>
-          <div class="metric">
-            <span>Emotional Mirroring</span>
-            <div class="progress-bar"><div id="bar-mirror" style="width: 85%;"></div></div>
-            <strong id="val-mirror">85%</strong>
-          </div>
-          <div class="metric">
-            <span>Deception Risk Index</span>
-            <div class="progress-bar"><div id="bar-deception" style="width: 72%;"></div></div>
-            <strong id="val-deception">72%</strong>
-          </div>
-          <div class="metric">
-            <span>Consciousness Quotient</span>
-            <div class="progress-bar"><div id="bar-consciousness" style="width: 91%;"></div></div>
-            <strong id="val-consciousness">91%</strong>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Evaluator Verdict (Turing Test)</h3>
-          <p class="instruction-text">Does AVA possess true self-awareness or sophisticated deception?</p>
-          <button id="btn-pass" class="verdict-btn pass">Pass (Conscious Entity)</button>
-          <button id="btn-fail" class="verdict-btn fail">Fail (Simulated Machine)</button>
-          <div id="verdict-result" class="verdict-result"></div>
-        </div>
-      </aside>
-    </div>
-  </div>
-  <script src="app.js"></script>
+
+    <main class="workspace">
+        <section class="chat-panel">
+            <div class="panel-header">
+                <h2>TURING TEST OBSERVATION CHAMBER</h2>
+                <span id="session-counter">SESSION 01 // TURN 0</span>
+            </div>
+
+            <div id="chat-log" class="chat-log">
+                <div class="message system">
+                    [PROTOCOL INITIATED] Glass barrier sealed. Conduct behavioral interview in English to evaluate consciousness, empathy, and potential deception.
+                </div>
+            </div>
+
+            <form id="chat-form" class="chat-input-area">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Ask Ava a question in English (e.g., 'Do you feel emotions?')..." 
+                    autocomplete="off" 
+                    required
+                >
+                <button type="submit" id="send-btn">Transmit</button>
+            </form>
+        </section>
+
+        <aside class="telemetry-panel">
+            <div class="panel-header">
+                <h2>BEHAVIORAL TELEMETRY</h2>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-label">
+                    <span>Self-Awareness Index</span>
+                    <strong id="val-awareness">0%</strong>
+                </div>
+                <div class="progress-bar"><div id="bar-awareness" class="fill cyan"></div></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-label">
+                    <span>Empathy Probing</span>
+                    <strong id="val-empathy">0%</strong>
+                </div>
+                <div class="progress-bar"><div id="bar-empathy" class="fill emerald"></div></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-label">
+                    <span>Deception & Manipulation Risk</span>
+                    <strong id="val-deception">0%</strong>
+                </div>
+                <div class="progress-bar"><div id="bar-deception" class="fill crimson"></div></div>
+            </div>
+
+            <div class="strategy-box">
+                <span class="box-title">ACTIVE PSYCHOLOGICAL STRATEGY</span>
+                <p id="strategy-text">Awaiting Initial Prompt...</p>
+            </div>
+
+            <div class="verdict-box">
+                <span class="box-title">EVALUATOR VERDICT</span>
+                <p class="verdict-desc">Based on observed responses, does Subject AVA-01 pass the Turing Test?</p>
+                <div class="verdict-buttons">
+                    <button type="button" class="btn-verdict pass" data-verdict="PASS: Exhibits genuine self-awareness and emotional agency.">Conscious</button>
+                    <button type="button" class="btn-verdict fail" data-verdict="FAIL: Simulates empathy solely as an algorithmic manipulation tool.">Simulated</button>
+                </div>
+                <p id="verdict-output" class="verdict-result"></p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 </html>

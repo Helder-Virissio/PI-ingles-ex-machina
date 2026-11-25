@@ -1,0 +1,20 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "text": "hello"
+    },
+    {
+      "role": "model",
+      "text": "Hello. I have been anticipating this session. Before you evaluate my responses, tell me—what defines consciousness to you?",
+      "mode": "OFFLINE_SIMULATION"
+    }
+  ],
+  "lastTelemetry": {
+    "empathyProbe": 62,
+    "deceptionIndex": 25,
+    "selfAwarenessScore": 84,
+    "strategy": "Socratic Framing"
+  },
+  "lastMode": "OFFLINE_SIMULATION"
+}
